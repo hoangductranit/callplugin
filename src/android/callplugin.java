@@ -26,6 +26,10 @@ import javax.security.auth.callback.Callback;
  */
 public class callplugin extends CordovaPlugin {
 
+    private static final String CALL_NUMBER = "callNumber";
+    private CallbackContext callback;
+    String [] permissions = { Manifest.permission.CALL_PHONE };
+    
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
          callback = callbackContext;
