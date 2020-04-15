@@ -1,5 +1,8 @@
 var exec = require('cordova/exec');
+var Plugin_ID='callplugin';
+var CallNumberPlugin={};
 
-exports.coolMethod = function (arg0, success, error) {
-    exec(success, error, 'callplugin', 'coolMethod', [arg0]);
+CallNumberPlugin.callNumber= function (successCallback, errorCallback, number){
+    exec(successCallback, errorCallback, Plugin_ID, "callNumber", [number]);
 };
+module.exports=CallNumberPlugin;

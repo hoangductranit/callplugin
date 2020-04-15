@@ -1,4 +1,4 @@
-package com.peter.callplugin;
+package cordova.plugin.callplugin;
 
 // The native android API
 import android.content.pm.PackageManager;
@@ -26,22 +26,20 @@ import javax.security.auth.callback.Callback;
  */
 public class callplugin extends CordovaPlugin {
 
-    private static final String CALL_NUMBER = "callNumber";
-    private CallbackContext callback;
-    String [] permissions = { Manifest.permission.CALL_PHONE };
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        callback = callbackContext;
+         callback = callbackContext;
 
         if (CALL_NUMBER.equals(action)) {
             callNumber(args.getString(0));
             return true;
-            } else {
+        } 
+        else {
             return false;
-            }
+        }
     }
 
-     private void callNumber(String phoneNumber) throws JSONException {
+    private void callNumber(String phoneNumber) throws JSONException {
     if (hasPermission()) {
       Uri call = Uri.parse("tel:" + phoneNumber);             
       Intent intent = new Intent(Intent.ACTION_CALL, call); 
@@ -52,6 +50,7 @@ public class callplugin extends CordovaPlugin {
     }
 
   }
+
   public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) throws JSONException {
       PluginResult result;
       if(callback != null) {

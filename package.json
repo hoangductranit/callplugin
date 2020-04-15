@@ -1,17 +1,25 @@
 {
-  "name": "com.peter.callplugin",
+  "name": "cordova-plugin-callplugin",
   "version": "1.0.0",
   "description": "",
   "cordova": {
-    "id": "com.peter.callplugin",
+    "id": "cordova-plugin-callplugin",
     "platforms": [
       "android"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangductranit/callplugin.git"
   },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "author": "",
-  "license": "ISC"
+  "author": "Peter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangductranit/callplugin/issues"
+  },
+  "homepage": "https://github.com/hoangductranit/callplugin#readme"
 }
